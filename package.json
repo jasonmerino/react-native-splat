@@ -1,0 +1,22 @@
+{
+  "name": "react-native-splat",
+  "version": "1.0.0",
+  "description": "A React Native UI library for everything I need.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonmerino/react-native-splat.git"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Jason Merino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonmerino/react-native-splat/issues"
+  },
+  "homepage": "https://github.com/jasonmerino/react-native-splat#readme"
+}
