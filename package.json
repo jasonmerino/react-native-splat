@@ -4,6 +4,7 @@
   "description": "A React Native UI library for everything I need.",
   "main": "index.js",
   "scripts": {
+    "lint": "node_modules/.bin/eslint Library",
     "test": "test"
   },
   "repository": {
@@ -18,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/jasonmerino/react-native-splat/issues"
   },
-  "homepage": "https://github.com/jasonmerino/react-native-splat#readme"
+  "homepage": "https://github.com/jasonmerino/react-native-splat#readme",
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "react": "^15.2.1",
+    "react-native": "^0.30.0"
+  }
 }
