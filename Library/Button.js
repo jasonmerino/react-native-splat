@@ -6,9 +6,8 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  ActivityIndicatorIOS,
+  ActivityIndicator,
 } from 'react-native';
-import { ActivityIndicator } from 'react-native-splat';
 
 const componentStyles = StyleSheet.create({
   button: {
@@ -28,7 +27,7 @@ class Button extends Component {
   getContent() {
     const { children, isLoading } = this.props;
     if (isLoading) {
-      return <ActivityIndicatorIOS />;
+      return <ActivityIndicator />;
     }
     if (typeof children === 'string') {
       return <Text style={[componentStyles.textStyle, this.props.textStyle]}>{children}</Text>;
