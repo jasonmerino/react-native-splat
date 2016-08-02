@@ -1,9 +1,11 @@
 import React, {
+  Component,
   PropTypes,
 } from 'react';
 import ReactNative from 'react-native';
+console.log('MEH', ReactNative.StyleSheet);
 
-const componentStyles = StyleSheet.create({
+const componentStyles = ReactNative.StyleSheet.create({
   input: {
     height: 48,
     padding: 10,
@@ -12,23 +14,31 @@ const componentStyles = StyleSheet.create({
   },
 });
 
-const TextInput = () => {
-  const {
-    onChangeText,
-    placeholder,
-    keyboardType,
-    value,
-  } = this.props;
-  return (
-    <ReactNative.TextInput
-      placeholder={placeholder}
-      value={value}
-      keyboardType={keyboardType}
-      onChangeText={onChangeText}
-      style={[componentStyles.input, componentStyles.passwordInput]}
-    />
-  );
-};
+class TextInput extends Component {
+  getStyle() {
+    return [this.props.style, componentStyles.input];
+  }
+
+  render() {
+    const {
+      onChangeText,
+      placeholder,
+      keyboardType,
+      value,
+      secureTextEntry,
+    } = this.props;
+    return (
+      <ReactNative.TextInput
+        placeholder={placeholder}
+        value={value}
+        keyboardType={keyboardType}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
+        style={this.getStyle()}
+      />
+    );
+  }
+}
 
 TextInput.propTypes = {
   onChangeText: PropTypes.func,
@@ -48,12 +58,15 @@ TextInput.propTypes = {
     'twitter',
     'web-search',
   ]),
+  secureTextEntry: PropTypes.bool,
   style: ReactNative.Text.propTypes.style,
 };
 
 TextInput.defaultProps = {
+  secureTextEntry: false,
   placeholder: '',
   keyboardType: 'default',
+  style: {},
 };
 
 export default TextInput;
