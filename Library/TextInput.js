@@ -1,11 +1,9 @@
 import React, {
   Component,
   PropTypes,
-} from 'react';
-import ReactNative from 'react-native';
-console.log('MEH', ReactNative.StyleSheet);
+} from 'react-native';
 
-const componentStyles = ReactNative.StyleSheet.create({
+const componentStyles = React.StyleSheet.create({
   input: {
     height: 48,
     padding: 10,
@@ -28,7 +26,7 @@ class TextInput extends Component {
       secureTextEntry,
     } = this.props;
     return (
-      <ReactNative.TextInput
+      <React.TextInput
         placeholder={placeholder}
         value={value}
         keyboardType={keyboardType}
@@ -59,7 +57,7 @@ TextInput.propTypes = {
     'web-search',
   ]),
   secureTextEntry: PropTypes.bool,
-  style: ReactNative.Text.propTypes.style,
+  style: React.Text.propTypes.style,
 };
 
 TextInput.defaultProps = {

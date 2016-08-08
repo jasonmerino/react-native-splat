@@ -1,12 +1,11 @@
 import React, {
   Component,
   PropTypes,
-} from 'react';
-import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  ActivityIndicator,
+  ActivityIndicatorIOS,
+  View,
 } from 'react-native';
 
 const componentStyles = StyleSheet.create({
@@ -27,7 +26,11 @@ class Button extends Component {
   getContent() {
     const { children, isLoading } = this.props;
     if (isLoading) {
-      return <ActivityIndicator />;
+      return (
+        <View>
+          <ActivityIndicatorIOS />
+        </View>
+      );
     }
     if (typeof children === 'string') {
       return <Text style={[componentStyles.textStyle, this.props.textStyle]}>{children}</Text>;
