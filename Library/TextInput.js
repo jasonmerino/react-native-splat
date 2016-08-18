@@ -18,20 +18,13 @@ class TextInput extends Component {
   }
 
   render() {
-    const {
-      onChangeText,
-      placeholder,
-      keyboardType,
-      value,
-      secureTextEntry,
-    } = this.props;
+    const props = {
+      ...this.props,
+    };
+    delete props.style;
     return (
       <React.TextInput
-        placeholder={placeholder}
-        value={value}
-        keyboardType={keyboardType}
-        onChangeText={onChangeText}
-        secureTextEntry={secureTextEntry}
+        {...props}
         style={this.getStyle()}
       />
     );

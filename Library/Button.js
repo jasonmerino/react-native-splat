@@ -13,6 +13,7 @@ const componentStyles = StyleSheet.create({
     height: 48,
     backgroundColor: '#333',
     justifyContent: 'center',
+    borderRadius: 3,
   },
   textStyle: {
     color: 'white',
@@ -43,6 +44,7 @@ class Button extends Component {
       <TouchableHighlight
         onPress={this.props.onPress}
         style={[componentStyles.button, this.props.style]}
+        underlayColor={this.props.underlayColor}
       >
         {this.getContent()}
       </TouchableHighlight>
@@ -60,12 +62,14 @@ Button.propTypes = {
   textStyle: Text.propTypes.style,
   onPress: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
+  underlayColor: PropTypes.string,
 };
 
 Button.defaultProps = {
   style: {},
   textStyle: {},
   isLoading: false,
+  underlayColor: '#222',
 };
 
 export default Button;
