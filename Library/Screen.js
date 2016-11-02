@@ -1,8 +1,8 @@
-import React, {
-  PropTypes,
-  ScrollView,
-} from 'react-native';
-
+// import React, {
+//   PropTypes,
+//   ScrollView,
+// } from 'react-native';
+//
 // const componentStyles = StyleSheet.create({
 //   button: {
 //     height: 48,
@@ -15,21 +15,21 @@ import React, {
 //     textAlign: 'center',
 //   },
 // });
-
-const Screen = () => (
-  <ScrollView>
-    {this.props.children}
-  </ScrollView>
-);
-
-Screen.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-  ]),
-};
-
-Screen.defaultProps = {
-};
-
-export default Screen;
+//
+// const Screen = () => (
+//   <ScrollView>
+//     {this.props.children}
+//   </ScrollView>
+// );
+//
+// Screen.propTypes = {
+//   children: PropTypes.oneOfType([
+//     PropTypes.element,
+//     PropTypes.string,
+//   ]),
+// };
+//
+// Screen.defaultProps = {
+// };
+//
+// export default Screen;

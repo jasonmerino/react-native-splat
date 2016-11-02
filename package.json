@@ -8,7 +8,7 @@
     "release-major": "npm version major ; git push origin --tags",
     "release-minor": "npm version minor ; git push origin --tags",
     "release-patch": "npm version patch ; git push origin --tags",
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,9 @@
   "keywords": [
     "react-native"
   ],
+  "jest": {
+    "preset": "jest-react-native"
+  },
   "author": "Jason Merino",
   "license": "MIT",
   "bugs": {
@@ -28,15 +31,21 @@
     }
   },
   "homepage": "https://github.com/jasonmerino/react-native-splat#readme",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-native": "^0.36.0"
+  },
   "devDependencies": {
+    "babel-jest": "^16.0.0",
     "babel-preset-react-native": "^1.9.0",
     "eslint": "^3.1.1",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.12.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.0.1",
-    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react": "^6.5.0",
     "ghooks": "^1.3.2",
-    "react": "^0.14.8",
-    "react-native": "^0.35.0"
+    "jest": "^16.0.2",
+    "jest-react-native": "^16.0.0",
+    "react-test-renderer": "^15.3.2"
   }
 }

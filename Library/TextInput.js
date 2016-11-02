@@ -1,6 +1,5 @@
 import React, {
   Component,
-  PropTypes,
 } from 'react';
 import ReactNative from 'react-native';
 
@@ -34,31 +33,10 @@ class TextInput extends Component {
 }
 
 TextInput.propTypes = {
-  onChangeText: PropTypes.func,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  keyboardType: PropTypes.oneOf([
-    'default',
-    'email-address',
-    'numeric',
-    'phone-pad',
-    'ascii-capable',
-    'numbers-and-punctuation',
-    'url',
-    'number-pad',
-    'name-phone-pad',
-    'decimal-pad',
-    'twitter',
-    'web-search',
-  ]),
-  secureTextEntry: PropTypes.bool,
   style: ReactNative.Text.propTypes.style,
 };
 
 TextInput.defaultProps = {
-  secureTextEntry: false,
-  placeholder: '',
-  keyboardType: 'default',
   style: {},
 };
 
