@@ -1,10 +1,9 @@
-import React, {
-  Component,
-  PropTypes,
+import React, { Component, PropTypes } from 'react';
+import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   View,
 } from 'react-native';
 
@@ -23,13 +22,27 @@ const componentStyles = StyleSheet.create({
 
 class Button extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.onPress = this.onPress.bind(this);
+    this.getContent = this.getContent.bind(this);
+  }
+
+  onPress(event) {
+    if (!this.props.disabled) {
+      this.props.onPress(event);
+    } else if (this.props.onPressDisabled) {
+      this.props.onPressDisabled(event);
+    }
+  }
 
   getContent() {
     const { children, isLoading } = this.props;
     if (isLoading) {
       return (
         <View>
-          <ActivityIndicatorIOS />
+          <ActivityIndicator />
         </View>
       );
     }
@@ -42,7 +55,7 @@ class Button extends Component {
   render() {
     return (
       <TouchableHighlight
-        onPress={this.props.onPress}
+        onPress={this.onPress}
         style={[componentStyles.button, this.props.style]}
         underlayColor={this.props.underlayColor}
       >
@@ -58,15 +71,18 @@ Button.propTypes = {
     PropTypes.element,
     PropTypes.string,
   ]),
+  disabled: PropTypes.bool,
   style: Text.propTypes.style,
   textStyle: Text.propTypes.style,
   onPress: PropTypes.func,
-  isLoading: PropTypes.bool.isRequired,
+  onPressDisabled: PropTypes.func,
+  isLoading: PropTypes.bool,
   underlayColor: PropTypes.string,
 };
 
 Button.defaultProps = {
   style: {},
+  disabled: false,
   textStyle: {},
   isLoading: false,
   underlayColor: '#222',

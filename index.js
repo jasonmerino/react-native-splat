@@ -1,6 +1,3 @@
-/**
- * @providesModule react-native-splat
- */
 /* eslint-disable global-require */
 module.exports = {
   get Button() { return require('./Library/Button').default; },
