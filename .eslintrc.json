@@ -6,7 +6,8 @@
     "rules": {
         "import/no-unresolved": [2, { "commonjs": true, "ignore": ["react-native-splat"] }],
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+        "react/prefer-stateless-function": 0
     },
     "parserOptions": {
         "ecmaFeatures": {

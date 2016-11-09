@@ -6,14 +6,9 @@ import {
   ActivityIndicator,
   View,
 } from 'react-native';
+import theme from './themeConfig';
 
 const componentStyles = StyleSheet.create({
-  button: {
-    height: 48,
-    backgroundColor: '#333',
-    justifyContent: 'center',
-    borderRadius: 3,
-  },
   textStyle: {
     color: 'white',
     textAlign: 'center',
@@ -26,7 +21,9 @@ class Button extends Component {
     super(props);
 
     this.onPress = this.onPress.bind(this);
-    this.getContent = this.getContent.bind(this);
+    this.renderContent = this.renderContent.bind(this);
+    this.getThemeButtonStyle = this.getThemeButtonStyle.bind(this);
+    this.getTheme = this.getTheme.bind(this);
   }
 
   onPress(event) {
@@ -37,7 +34,28 @@ class Button extends Component {
     }
   }
 
-  getContent() {
+  getTheme() {
+    if (this.context.theme && this.context.theme.button) {
+      return this.context.theme.button;
+    }
+    return theme.button;
+  }
+
+  getThemeButtonStyle() {
+    const {
+      buttonHeight,
+      buttonBackgroundColor,
+      buttonRadius,
+    } = this.getTheme();
+    return {
+      height: buttonHeight,
+      backgroundColor: buttonBackgroundColor,
+      justifyContent: 'center',
+      borderRadius: buttonRadius,
+    };
+  }
+
+  renderContent() {
     const { children, isLoading } = this.props;
     if (isLoading) {
       return (
@@ -56,26 +74,40 @@ class Button extends Component {
     return (
       <TouchableHighlight
         onPress={this.onPress}
-        style={[componentStyles.button, this.props.style]}
+        style={[this.getThemeButtonStyle(), this.props.style]}
         underlayColor={this.props.underlayColor}
       >
-        {this.getContent()}
+        {this.renderContent()}
       </TouchableHighlight>
     );
   }
 
 }
 
+Button.contextTypes = {
+  theme: PropTypes.object,
+};
+
 Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-  ]),
+  /**
+   * Pass text as child or other component
+   */
+  children: PropTypes.node,
+  /**
+   * Disable button
+   */
   disabled: PropTypes.bool,
   style: Text.propTypes.style,
   textStyle: Text.propTypes.style,
+  /**
+   * Function to call when button is pressed
+   */
   onPress: PropTypes.func,
   onPressDisabled: PropTypes.func,
+  /**
+   * Toggle loading state with `isLoading`.
+   * Child component or child text will not show while loading.
+   */
   isLoading: PropTypes.bool,
   underlayColor: PropTypes.string,
 };
