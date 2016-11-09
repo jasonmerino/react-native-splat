@@ -10,3 +10,8 @@ Props
 
 type: `node`
 
+
+### `style`
+
+type: `custom`
+

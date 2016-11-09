@@ -10,3 +10,8 @@ Props
 
 type: `node`
 
+
+### `theme`
+
+type: `shape[object Object]`
+

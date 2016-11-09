@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   View,
 } from 'react-native';
-import theme from './themeConfig';
+import theme from '../themeConfig';
 
 const componentStyles = StyleSheet.create({
   textStyle: {
