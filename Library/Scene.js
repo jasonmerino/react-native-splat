@@ -10,6 +10,7 @@ class Scene extends Component {
   render() {
     return (
       <ScrollView
+        {...this.props}
         style={[{
           flexGrow: 1,
         }, this.props.style]}
