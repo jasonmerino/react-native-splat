@@ -1,6 +1,6 @@
 {
   "name": "react-native-splat",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A React Native UI library for everything I need.",
   "main": "index.js",
   "scripts": {
