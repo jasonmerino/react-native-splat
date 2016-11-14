@@ -11,3 +11,8 @@ Props
 type: `custom`
 defaultValue: `{}`
 
+
+### `underlineColorAndroid`
+
+defaultValue: `'transparent'`
+
