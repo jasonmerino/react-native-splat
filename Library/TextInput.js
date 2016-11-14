@@ -38,6 +38,7 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   style: {},
+  underlineColorAndroid: 'transparent',
 };
 
 export default TextInput;
