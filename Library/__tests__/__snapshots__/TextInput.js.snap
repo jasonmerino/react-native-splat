@@ -1,0 +1,15 @@
+exports[`test renders correctly 1`] = `
+<TextInput
+  style={
+    Array [
+      Object {},
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 3,
+        "height": 48,
+        "padding": 10,
+      },
+    ]
+  }
+  underlineColorAndroid="transparent" />
+`;
