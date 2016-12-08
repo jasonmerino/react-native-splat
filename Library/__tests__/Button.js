@@ -10,3 +10,10 @@ it('renders correctly', () => {
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+it('renders loading state correctly', () => {
+  const tree = renderer.create(
+    <Button isLoading>Button Test</Button>,
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
