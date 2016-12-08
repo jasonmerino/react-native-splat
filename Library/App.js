@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import { View } from 'react-native';
 
 const defaultTheme = {};
 
@@ -6,12 +7,12 @@ class App extends Component {
 
   getChildContext() {
     return {
-      color: this.props.theme || defaultTheme,
+      theme: this.props.theme || defaultTheme,
     };
   }
 
   render() {
-    return this.props.children;
+    return <View>{this.props.children}</View>;
   }
 
 }
@@ -21,8 +22,8 @@ App.propTypes = {
   theme: PropTypes.shape({}),
 };
 
-App.contextTypes = {
-  theme: React.PropTypes.object,
+App.childContextTypes = {
+  theme: React.PropTypes.shape({}),
 };
 
 export default App;
